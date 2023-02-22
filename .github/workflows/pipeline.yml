@@ -18,7 +18,7 @@ jobs:
      - name: Build Magnolia Docker Image
        run: mvn -B -Dgithub-registry=${{github.repository_owner}} docker:build
      - name: Push Magnolia Docker Image
-       run: mvn -B -Ddocker.username=${{secrets.PACKAGES_USER}} -Ddocker.password=${{secrets.GITHUB_TOKEN}} -Dgithub-registry=${{github.repository_owner}} docker:push
+       run: mvn -B -Ddocker.username=${{github.actor}} -Ddocker.password=${{secrets.GITHUB_TOKEN}} -Dgithub-registry=${{github.repository_owner}} docker:push
  helm-lint:
    name: Helm lint and release
    runs-on: ubuntu-latest

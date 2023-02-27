@@ -32,5 +32,5 @@ jobs:
      - name: Helm install
        uses: WyriHaximus/github-action-helm3@v2
        with:
-         exec: helm upgrade --install github-magnolia-docker ./helm-chart --dry-run
+         exec: helm upgrade --install github-magnolia-docker ./helm-chart
          kubeconfig: '${{ secrets.KUBECONFIG }}'

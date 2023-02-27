@@ -2,7 +2,7 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-replicaCount: 1
+replicaCount: 2
 
 image:
   repository: ghcr.io/orest-p/magnolia-docker/magnolia-docker
@@ -37,22 +37,22 @@ ingress:
     kubernetes.io/ingress.class: nginx
     kubernetes.io/tls-acme: "true"
   path: /
-  authorHost: github-magnolia-docker-author.experimentation.magnolia-cloud.com
-  publicHost: github-magnolia-docker-public.experimentation.magnolia-cloud.com
+  authorHost: author.orest.dev
+  publicHost: public.orest.dev
   # hosts:
-  #  - host: github-magnolia-docker-author.experimentation.magnolia-cloud.com
+  #  - host: author.orest.dev
   #    paths:
   #      - /
-  #  - host: github-magnolia-docker-public.experimentation.magnolia-cloud.com
+  #  - host: public.orest.dev
   #    paths:
   #      - /
   tls:
     - secretName: github-magnolia-docker-author-tls
       hosts:
-        - github-magnolia-docker-author.experimentation.magnolia-cloud.com
+        - author.orest.dev
     - secretName: github-magnolia-docker-public-tls
       hosts:
-        - github-magnolia-docker-public.experimentation.magnolia-cloud.com
+        - public.orest.dev
 
 resources:
   limits:
